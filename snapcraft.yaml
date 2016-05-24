@@ -1,0 +1,15 @@
+name: hello-snapcraftio
+version: 1.0
+summary: Snapcraft.io hello snap
+description: This snap is the hello world for new snap users.
+ More info at https://snapcraft.io website.
+
+apps:
+  hello-snapcraftio:
+    command: hello
+
+parts:
+  hello-command:
+    plugin: copy
+    files:
+      hello: .
