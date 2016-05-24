@@ -2,6 +2,8 @@ name: hello-snapcraftio
 version: 1.0
 summary: Snapcraft.io hello snap
 description: This snap is the hello world for new snap users.
+ 1.x versions are in the stable channel and prints "Hello world!".
+ 2.x versions are in the beta channel and prints "Hello snap guru!".
  More info at https://snapcraft.io website.
 
 apps:
