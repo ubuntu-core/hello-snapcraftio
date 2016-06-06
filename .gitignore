@@ -1,6 +1,5 @@
-parts/*
-!parts/plugins/
-__pycache__/
-snap/
-stage/
-*.snap
+**/parts/*
+**/!parts/plugins/
+**/snap/
+**/stage/
+**/*.snap
