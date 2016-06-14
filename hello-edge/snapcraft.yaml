@@ -7,7 +7,7 @@ confinement: strict
 
 apps:
   hello:
-    command: hello -g "Hello, snap guru!"
+    command: hello -g \"Hello, snap guru!\"
 
 parts:
   gnu-hello:
