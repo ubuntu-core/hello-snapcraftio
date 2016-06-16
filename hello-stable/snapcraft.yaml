@@ -8,6 +8,8 @@ confinement: strict
 apps:
   hello:
     command: hello
+  universe:
+    command: hello -g \"Hello, universe!\"
 
 parts:
   gnu-hello:
