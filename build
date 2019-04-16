@@ -1,8 +1,0 @@
-#!/bin/bash
-
-base_dir=`dirname $0`
-for dir in hello-stable hello-beta hello-edge; do
-  pushd $base_dir/$dir > /dev/null
-  snapcraft
-  popd > /dev/null
-done
