@@ -1,7 +1,14 @@
 name: hello
-base: core
+base: core20
 confinement: strict
 grade: stable
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+  - build-on: armhf
+  - build-on: ppc64el
+  - build-on: s390x
 
 version: "2.10"
 summary: GNU Hello
@@ -10,18 +17,16 @@ description: GNU hello prints a friendly greeting.
 apps:
   hello:
     command: bin/hello
-    adapter: full
   universe:
-    # Create a wrapper to avoid:
-    # Failed to generate snap metadata: The specified command
-    # 'bin/hello -g "Hello, universe!"' defined in the app 'universe'
-    # does not match the pattern expected by snapd.
-    # The command must consist only of alphanumeric characters, spaces,
-    # and the following special characters: / . _ # : $ -
-    command: bin/hello -g "Hello, universe!"
-    adapter: legacy
+    # '"' is not allowed for commands.
+    command: bin/hello -g $SAY
+    environment:
+      SAY: "Hello, universe!"
 
 parts:
   gnu-hello:
     source: http://ftp.gnu.org/gnu/$SNAPCRAFT_PROJECT_NAME/$SNAPCRAFT_PROJECT_NAME-$SNAPCRAFT_PROJECT_VERSION.tar.gz
+    source-checksum: sha256/31e066137a962676e89f69d1b65382de95a7ef7d914b8cb956f41ea72e0f516b
     plugin: autotools
+    autotools-configure-parameters:
+      - --prefix=/
