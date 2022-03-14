@@ -8,9 +8,10 @@ architectures:
   - build-on: arm64
   - build-on: armhf
   - build-on: ppc64el
+  - build-on: riscv64
   - build-on: s390x
 
-version: "2.10"
+version: "2.12"
 summary: GNU Hello
 description: GNU hello prints a friendly greeting.
 
@@ -26,7 +27,7 @@ apps:
 parts:
   gnu-hello:
     source: http://ftp.gnu.org/gnu/$SNAPCRAFT_PROJECT_NAME/$SNAPCRAFT_PROJECT_NAME-$SNAPCRAFT_PROJECT_VERSION.tar.gz
-    source-checksum: sha256/31e066137a962676e89f69d1b65382de95a7ef7d914b8cb956f41ea72e0f516b
+    source-checksum: sha256/cf04af86dc085268c5f4470fbae49b18afbc221b78096aab842d934a76bad0ab
     plugin: autotools
     autotools-configure-parameters:
       - --prefix=/
